@@ -39,9 +39,9 @@ Widget::Widget(QWidget *parent) :
     ui->comboBox_ckh->addItem("/dev/pts/20");
 
     // 波特率
-//    ui->comboBox_btl->addItem("9600");
+    ui->comboBox_btl->addItem("9600");
     ui->comboBox_btl->addItem("57600");
-//    ui->comboBox_btl->addItem("115200");
+    ui->comboBox_btl->addItem("115200");
 
     // 数据位
     ui->comboBox_sjw->addItem("8");
@@ -65,38 +65,9 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::on_pushButton_cmopen_clicked()
-{
-//    my_serialport= new QSerialPort();
-//    qDebug()<<ui->comboBox->currentText();
-//    my_serialport->setPortName(ui->comboBox->currentText());
-//    my_serialport->open(QIODevice::ReadWrite);
-//    qDebug()<<ui->lineEdit->text().toInt();
-//    my_serialport->setBaudRate(ui->lineEdit->text().toInt());
-//    my_serialport->setDataBits(QSerialPort::Data8);
-//    my_serialport->setParity(QSerialPort::NoParity);
-//    my_serialport->setStopBits(QSerialPort::OneStop);
-//    my_serialport->setFlowControl(QSerialPort::NoFlowControl);
-
-//    timer = new QTimer(this);
-//    connect(timer, SIGNAL(timeout()), this, SLOT(updateAA()));
-//    timer->start(1000);
-}
-
-void Widget::updateAA()
-{
-//    requestData = my_serialport->readAll();
-//    if(requestData!= NULL)
-//    {
-//        ui->textEdit->append(requestData);
-//    }
-//    requestData.clear();
-}
 
 void Widget::on_pushButton_send_clicked()
 {
-//    QByteArray TxData = "aaaa";
-//    my_serialport->write(TxData);
     my_serialport->write(ui->lineEdit->text().toLocal8Bit());
 }
 

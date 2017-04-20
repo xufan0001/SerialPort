@@ -19,8 +19,6 @@ public:
     ~Widget();
 
 private slots:
-    void on_pushButton_cmopen_clicked();
-    void updateAA();
 
     void on_pushButton_send_clicked();
 
